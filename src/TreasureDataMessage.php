@@ -22,34 +22,38 @@ class TreasureDataMessage
     public function apikey(string $apikey): static
     {
         $this->apikey = $apikey;
+
         return $this;
     }
 
     public function database(string $database): static
     {
         $this->database = $database;
+
         return $this;
     }
 
     public function table(string $table): static
     {
         $this->table = $table;
+
         return $this;
     }
 
     public function data(array $data): static
     {
         $this->data = $data;
+
         return $this;
     }
 
     public function toArray(): array
     {
         return [
-            'apikey' => $this->apikey,
+            'apikey'   => $this->apikey,
             'database' => $this->database,
-            'table' => $this->table,
-            'data' => $this->data,
+            'table'    => $this->table,
+            'data'     => $this->data,
         ];
     }
 }
