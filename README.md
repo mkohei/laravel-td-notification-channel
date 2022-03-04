@@ -1,6 +1,9 @@
 <!-- no toc -->
 # Treasure Data notifications channel for Laravel
 
+[![tests](https://github.com/mkohei/laravel-td-notification-channel/actions/workflows/tests.yml/badge.svg)](https://github.com/mkohei/laravel-td-notification-channel/actions/workflows/tests.yml)
+[![StyleCI](https://github.styleci.io/repos/465760296/shield?branch=main)](https://github.styleci.io/repos/465760296?branch=main)
+
 This package makes it easy to send [Treasure Data](https://www.treasuredata.com/) using the Laravel notification system and the [Treasure Data Postback API](https://docs.treasuredata.com/display/public/PD/Postback+API).
 
 ## Contents
