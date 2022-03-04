@@ -1,0 +1,38 @@
+{
+    "name": "mkohei/laravel-td-notification-channel",
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/notifications": "^9.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.3",
+        "phpunit/phpunit": "^9.0",
+        "pestphp/pest": "^1.21"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mkohei\\LaravelTdNotificationChannel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mkohei\\LaravelTdNotificationChannel\\Test\\": "tests/"
+        }
+      },
+    "authors": [
+        {
+            "name": "Kohei Matsumoto",
+            "email": "baberugaberiimeronnv5@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
