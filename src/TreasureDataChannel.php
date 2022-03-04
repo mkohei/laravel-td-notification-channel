@@ -20,16 +20,15 @@ class TreasureDataChannel
     /**
      * Send a given notification.
      *
-     * @param mixed                                  $notifiable
-     * @param \Illuminate\Notifications\Notification $notification
+     * @param  mixed  $notifiable
+     * @param  \Illuminate\Notifications\Notification  $notification
+     * @return \GuzzleHttp\Psr7\Response
      *
      * @throws \Mkohei\LaravelTdNotificationChannel\Exceptions\CloudNotSendNotification
-     *
-     * @return \GuzzleHttp\Psr7\Response
      */
     public function send(mixed $notifiable, Notification $notification): ?Response
     {
-        if (!$url = $notifiable->routeNotificationFor('treasure_data')) {
+        if (! $url = $notifiable->routeNotificationFor('treasure_data')) {
             return null;
         }
 
