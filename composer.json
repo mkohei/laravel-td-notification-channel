@@ -1,5 +1,6 @@
 {
     "name": "mkohei/laravel-td-notification-channel",
+    "description": "Treasure Data Notification Channel for Laravel",
     "require": {
         "php": "^8.0",
         "guzzlehttp/guzzle": "^7.0",
