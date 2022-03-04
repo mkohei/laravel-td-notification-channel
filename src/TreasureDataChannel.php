@@ -18,28 +18,28 @@ class TreasureDataChannel
     }
 
     /**
-     * Send a given notification
-     * 
-     * @param mixed $notifiable
+     * Send a given notification.
+     *
+     * @param mixed                                  $notifiable
      * @param \Illuminate\Notifications\Notification $notification
-     * 
-     * @return \GuzzleHttp\Psr7\Response
-     * 
+     *
      * @throws \Mkohei\LaravelTdNotificationChannel\Exceptions\CloudNotSendNotification
+     *
+     * @return \GuzzleHttp\Psr7\Response
      */
     public function send(mixed $notifiable, Notification $notification): ?Response
     {
-        if (! $url = $notifiable->routeNotificationFor('treasure_data')) {
+        if (!$url = $notifiable->routeNotificationFor('treasure_data')) {
             return null;
         }
 
         $tdData = $notification->toTreasureData($notifiable)->toArray();
 
-        $url .= '/postback/v3/event/' . Arr::get($tdData, 'database') . '/' . Arr::get($tdData, 'table');
+        $url .= '/postback/v3/event/'.Arr::get($tdData, 'database').'/'.Arr::get($tdData, 'table');
 
         $response = $this->client->post($url, [
             'headers' => ['X-TD-Write-Key' => Arr::get($tdData, 'apikey')],
-            'json' => Arr::get($tdData, 'data'),
+            'json'    => Arr::get($tdData, 'data'),
         ]);
 
         if ($response->getStatusCode() >= 300 || $response->getStatusCode() < 200) {
